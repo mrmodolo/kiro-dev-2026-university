@@ -1,0 +1,21 @@
+{
+  "name": "json-format-example",
+  "description": "Example agent: postToolUse hook that validates and pretty-formats JSON files after they are written",
+  "tools": [
+    "read",
+    "shell",
+    "write"
+  ],
+  "hooks": [
+    {
+      "name": "postToolUse-0",
+      "trigger": "postToolUse",
+      "matcher": "write",
+      "action": {
+        "type": "command",
+        "command": "bash ./hooks/format-json-on-write.sh"
+      },
+      "timeout": 10
+    }
+  ]
+}

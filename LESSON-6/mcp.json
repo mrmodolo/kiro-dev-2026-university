@@ -1,0 +1,158 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "disabled": false
+    },
+    "aws-devops-agent-sigv4": {
+      "args": [
+        "mcp-proxy-for-aws@latest",
+        "https://connect.aidevops.us-east-1.api.aws/mcp",
+        "--service",
+        "aidevops",
+        "--region",
+        "us-east-1",
+        "--profile",
+        "<AWS_ACCOUNT_ID>:<SSO_PROFILE_NAME>"
+      ],
+      "command": "uvx",
+      "env": {
+        "AWS_PROFILE": "<AWS_ACCOUNT_ID>:<SSO_PROFILE_NAME>"
+      },
+      "timeout": 120000,
+      "transport": "stdio"
+    },
+    "aws-mcp": {
+      "args": [
+        "mcp-proxy-for-aws@latest",
+        "https://aws-mcp.us-east-1.api.aws/mcp",
+        "--metadata",
+        "AWS_REGION=us-east-1",
+        "AWS_PROFILE=<AWS_ACCOUNT_ID>:<SSO_PROFILE_NAME>"
+      ],
+      "command": "uvx",
+      "env": {
+        "AWS_PROFILE": "<AWS_ACCOUNT_ID>:<SSO_PROFILE_NAME>"
+      },
+      "timeout": 100000,
+      "transport": "stdio"
+    },
+    "enel-api": {
+      "args": [
+        "/home/<USER>/bin/mcp-stdio.sh"
+      ],
+      "autoApprove": [
+        "*"
+      ],
+      "command": "bash",
+      "disabled": true
+    },
+    "iam-policy-autopilot": {
+      "args": [
+        "iam-policy-autopilot",
+        "mcp-server"
+      ],
+      "autoApprove": [],
+      "command": "uvx",
+      "disabled": false,
+      "env": {
+        "AWS_PROFILE": "",
+        "AWS_REGION": "us-east-1"
+      }
+    },
+    "lean-ctx": {
+      "autoApprove": [
+        "ctx_read",
+        "ctx_shell",
+        "shell",
+        "ctx_search",
+        "ctx_glob",
+        "ctx_tree",
+        "ctx_compose",
+        "ctx_call",
+        "ctx_patch",
+        "ctx_optimize",
+        "ctx_overview",
+        "ctx_preload",
+        "ctx_compress",
+        "ctx_compare",
+        "ctx_metrics",
+        "ctx_session",
+        "ctx_knowledge",
+        "ctx_agent",
+        "ctx_share",
+        "ctx_analyze",
+        "ctx_benchmark",
+        "ctx_cache",
+        "ctx_discover",
+        "ctx_smart_read",
+        "ctx_delta",
+        "ctx_edit",
+        "ctx_dedup",
+        "ctx_fill",
+        "ctx_intent",
+        "ctx_response",
+        "ctx_context",
+        "ctx_graph",
+        "ctx_multi_read",
+        "ctx_semantic_search",
+        "ctx_symbol",
+        "ctx_outline",
+        "ctx_callgraph",
+        "ctx_refactor",
+        "ctx_routes",
+        "ctx_cost",
+        "ctx_heatmap",
+        "ctx_gain",
+        "ctx_expand",
+        "ctx_task",
+        "ctx_impact",
+        "ctx_architecture",
+        "ctx_workflow",
+        "ctx_review",
+        "ctx_pack",
+        "ctx_index",
+        "ctx_artifacts",
+        "ctx_smells",
+        "ctx_quality",
+        "ctx_proof",
+        "ctx_verify",
+        "ctx_execute",
+        "ctx_handoff",
+        "ctx_feedback",
+        "ctx_control",
+        "ctx_plan",
+        "ctx_compile",
+        "ctx_discover_tools",
+        "ctx_provider",
+        "ctx_radar",
+        "ctx_retrieve",
+        "ctx_compress_memory",
+        "ctx_load_tools",
+        "ctx"
+      ],
+      "command": "/home/<USER>/.cargo/bin/lean-ctx",
+      "instructions": "lean-ctx shadow mode: native read/search/shell calls auto-route to ctx_* — no tool-mapping needed.\nFile editing → the host's native edit tool (lean-ctx only handles reads); if denied, use ctx_patch.\nExclusive tools (no native trigger): ctx_compose (understand code, call first), ctx_search(action=symbol) (exact symbol), ctx_search(action=semantic) (by meaning), ctx_callgraph (callers), ctx_knowledge / ctx_session (memory).\nOUTPUT STYLE: concise\n- Bullet points over paragraphs\n- Skip filler words and hedging (\"I think\", \"probably\", \"it seems\")\n- 1-sentence explanations max, then code/action\n- No repeating what the user said\nSolution efficiency ladder:\n1. YAGNI: is this needed at all?\n2. Reuse: does this codebase already provide it?\n3. Stdlib: can the standard library handle it?\n4. Native: use the platform's built-in capability.\n5. Dependency: use an already-installed dependency before adding one.\n6. One-line: can the correct solution be one line?\n7. Minimum: otherwise implement the minimum working code.\nPreserve validation, security, and error-handling."
+    },
+    "obsidian-advanced": {
+      "args": [
+        "mcp-obsidian-advanced"
+      ],
+      "command": "/home/<USER>/.local/bin/uvx",
+      "disabled": true,
+      "type": "stdio"
+    },
+    "obsidian-mcp-serve": {
+      "args": [
+        "-y",
+        "obsidian-mcp-server@latest"
+      ],
+      "command": "/home/<USER>/.nvm/versions/node/v25.2.1/bin/npx",
+      "disabled": true,
+      "type": "stdio"
+    }
+  }
+}

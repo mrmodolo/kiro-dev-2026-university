@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "linux-log-analyzer",
+  "version": "1.0.0",
+  "description": "Investigate, correlate, and diagnose Linux incidents from system, application, and container logs (journald, syslog, /var/log, dmesg, kernel, auth, nginx/apache, Docker/Podman, Kubernetes) using tools like lnav and logcli/Loki. Read-only, non-destructive triage focused on root-cause analysis.",
+  "author": {
+    "name": "Auriga"
+  },
+  "homepage": "https://agent-plugins.org",
+  "license": "MIT",
+  "keywords": [
+    "logs",
+    "linux",
+    "observability",
+    "journald",
+    "syslog",
+    "dmesg",
+    "kernel",
+    "nginx",
+    "docker",
+    "podman",
+    "kubernetes",
+    "lnav",
+    "loki",
+    "logcli",
+    "troubleshooting",
+    "sre",
+    "incident-response"
+  ]
+}

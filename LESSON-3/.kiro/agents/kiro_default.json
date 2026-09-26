@@ -1,0 +1,11 @@
+{
+  "name": "kiro_default",
+  "description": "Default general-purpose agent with full tool access for everyday software engineering tasks",
+  "tools": [
+    "read",
+    "write",
+    "shell",
+    "search"
+  ],
+  "hooks": []
+}

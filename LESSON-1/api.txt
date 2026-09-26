@@ -1,0 +1,2 @@
+WHEN a user submits a value to the API, THE SYSTEM RESPONSE must indicate 
+success or a clear error with the appropriate code.

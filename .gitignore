@@ -1,0 +1,53 @@
+# Secrets & credentials
+*.env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+credentials
+*.credentials
+.aws/
+secrets.*
+*secret*.json
+
+# Backup & temp files
+*.bak
+*.tmp
+*.swp
+*~
+*.orig
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Go (LESSON-4)
+*.exe
+*.test
+*.out
+bin/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
